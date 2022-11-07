@@ -12,7 +12,7 @@ class ApplicationController < Sinatra::Base
 
   get '/author' do
     get_author = Author.all
-    get_author.to_json
+    get_author.to_json(include: :books)
   end
 
   get '/author/:id' do
@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
 
   get '/book' do
     get_book = Book.all.order(:asc)
-    get_book.to_json
+    get_book.to_json(include: :reviews)
   end
 
   get '/book/:id' do
@@ -50,13 +50,13 @@ class ApplicationController < Sinatra::Base
     get_book.to_json
   end
 
-  post '/book' do
-    new_book = Book.create(
-      title: params[:book_title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
-      genre: params[:genre], author_id: params[:author_id]
-    )
-    new_book.to_json
-  end
+  # post '/book' do
+  #   new_book = Book.create(
+  #     title: params[:book_title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
+  #     genre: params[:genre], author_id: params[:author_id]
+  #   )
+  #   new_book.to_json
+  # end
 
   patch '/book/:id' do
     update_book = Book.find(params[:id])
