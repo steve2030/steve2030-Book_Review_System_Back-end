@@ -1,5 +1,9 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+  before do
+    response.headers['Access-Contol-Allow-Origin'] = "*"
+  end
   
   # Add your routes here
   get "/" do
