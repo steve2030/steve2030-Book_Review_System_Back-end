@@ -46,19 +46,20 @@ class ApplicationController < Sinatra::Base
     get_book.to_json
   end
 
-  # post '/book' do
-  #   new_book = Book.create(
-  #     title: params[:book_title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
-  #     genre: params[:genre], author_id: params[:author_id]
-  #   )
-  #   new_book.to_json
-  # end
+  post '/book' do
+    new_book = Book.create(
+      title: params[:book_title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
+      genre: params[:genre], author_id: params[:author_id],description: params[:description]
+    )
+    
+    new_book.to_json
+  end
 
   patch '/book/:id' do
     update_book = Book.find(params[:id])
     update_book.update(
       title: params[:book_title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
-      genre: params[:genre], author_id: params[:author_id]
+      genre: params[:genre], author_id: params[:author_id],description: params[:description]
     )
     update_book.to_json
   end

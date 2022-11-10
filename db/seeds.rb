@@ -10,7 +10,8 @@ puts "🌱 Seeding spices..."
         isbn:rand(10000000..100000000000),
         genre:Faker::Book.genre,
         image_url:'https://picsum.photos/200/300?grayscale',
-        pages:rand(50..1000)
+        pages:rand(50..1000),
+        description:"1970s Afghanistan: Twelve-year-old Amir is desperate to win the local kite-fighting tournament and his loyal friend Hassan promises to help him. But neither of the boys can foresee what would happen to Hassan that afternoon, an event that is to shatter their lives. After the Russians invade and the family is forced to flee to America, Amir realises that one day he must return to an Afghanistan under Taliban rule to find the one thing that his new world cannot grant him: redemption"
     )
     auth = Author.create(
         name:Faker::Book.author,
