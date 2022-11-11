@@ -27,6 +27,7 @@ puts "🌱 Seeding spices..."
 #     book.save
 
     book = Book.create(
+        author_name:"Matt Haig",
         title:"The Midnight Library",
         publisher: nil,
         year:rand(1800..2022),
@@ -38,6 +39,7 @@ puts "🌱 Seeding spices..."
     )
 
     book = Book.create(
+        author_name:"Paulo Coelho",
         title:"The Alchemist: 25th Anniversary Edition",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -49,6 +51,7 @@ puts "🌱 Seeding spices..."
     )
 
     book = Book.create(
+        author_name:"Lola Shoneyin",
         title:"The Secret Lives of Baba Segi's Wives",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -60,6 +63,7 @@ puts "🌱 Seeding spices..."
     )
 
     book = Book.create(
+        author_name:"Abdulrazak Gurnah",
         title:"Afterlives",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -72,6 +76,7 @@ puts "🌱 Seeding spices..."
 
 
     book = Book.create(
+        author_name:"Tayari Jones",
         title:"An American Marriage",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -83,6 +88,7 @@ puts "🌱 Seeding spices..."
 
     )
     book = Book.create(
+        author_name:"Tara Westover",
         title:"Educated",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -95,6 +101,7 @@ puts "🌱 Seeding spices..."
     )
 
     book = Book.create(
+        author_name:"Maaza Mengiste",
         title:"The Shadow King",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -108,6 +115,7 @@ puts "🌱 Seeding spices..."
     )
 
     book = Book.create(
+        author_name:"Khaled Hosseini",
         title:"A Thousand Splendid Suns",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -119,6 +127,7 @@ puts "🌱 Seeding spices..."
     )
 
     book = Book.create(
+        author_name:"Khaled Hosseini",
         title:"The Kite Runner",
         publisher:Faker::Book.publisher,
         year:rand(1800..2022),
@@ -138,6 +147,7 @@ puts "🌱 Seeding spices..."
         genre:"Academic",
         image_url:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/440px-The_Great_Gatsby_Cover_1925_Retouched.jpg',
         pages:rand(50..1000),
+        author_name:"F. Scott Fitzgerald",
         description:"The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted “gin was the national drink and sex the national obsession,” it is an exquisitely crafted tale of America in the 1920s."
     )
 
