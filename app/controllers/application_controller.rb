@@ -50,15 +50,26 @@ class ApplicationController < Sinatra::Base
     get_book.to_json
   end
 
+  get '/book/related/:id' do
+    category = Book.find(params[:id]).genre
+    get_book = Book.where('genre = ? and id != ?', category,params[:id])
+    get_book.to_json
+  end
+
+  get '/book/category/:cat' do
+    get_book = Book.where('genre = ? ',params[:cat])
+    get_book.to_json
+  end
+
   post '/book' do
     new_book = Book.create(
-      title: params[:book_title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
+      title: params[:title], publisher: params[:publisher], pages: params[:pages], year: params[:year], isbn: params[:isbn],
       genre: params[:genre], author_id: params[:author_id],description: params[:description]
     )
     
     new_book.to_json
   end
-
+  
   patch '/book/:id' do
     update_book = Book.find(params[:id])
     update_book.update(
@@ -75,37 +86,6 @@ class ApplicationController < Sinatra::Base
   end
 
 
-
-  get '/review' do
-    get_review = Review.all.order(:asc)
-    get_review.to_json
-  end
-
-  get '/review/:id' do
-    get_review = Review.find(params[:id])
-    get_review.to_json
-  end
-
-  post '/review' do
-    new_review = Review.create(
-      description: params[:description], book_id: params[:book_id], rating: params[:rating]
-    )
-    new_review.to_json
-  end
-
-  patch '/review/:id' do
-    update_review = Review.find(params[:id])
-    update_review.update(
-      description: params[:description], book_id: params[:book_id], rating: params[:rating]
-    )
-    update_review.to_json
-  end
-
-  delete '/review/:id' do
-    delete_review = Review.find(params[:id])
-    delete_review.destroy
-    delete_review.to_json
-  end
 
 end
 

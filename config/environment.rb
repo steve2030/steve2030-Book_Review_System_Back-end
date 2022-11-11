@@ -5,6 +5,11 @@ ENV['RACK_ENV'] ||= "development"
 # Require in Gems
 require 'bundler/setup'
 Bundler.require(:default, ENV['RACK_ENV'])
-
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+require 'cloudinary'
 # Require in all files in 'app' directory
 require_all 'app'
+# CarrierWave.configure do |config|
+#     config.root = File.dirname(__FILE__) + "/public"
+#   end

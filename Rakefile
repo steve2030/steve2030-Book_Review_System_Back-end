@@ -1,6 +1,6 @@
 require_relative "./config/environment"
 require "sinatra/activerecord/rake"
-
+require 'carrierwave/orm/activerecord'
 desc "Start the server"
 task :server do  
   if ActiveRecord::Base.connection.migration_context.needs_migration?
