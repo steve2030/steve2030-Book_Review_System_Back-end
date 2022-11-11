@@ -85,7 +85,27 @@ class ApplicationController < Sinatra::Base
     delete_book.to_json
   end
 
+  get '/review' do
+    get_review = Review.all.order(:asc)
+    get_review.to_json
+  end
 
+  get '/review/:id' do
+    get_review = Review.find(params[:id])
+    get_review.to_json
+  end
+
+  post '/review' do
+    new_review = Review.create(
+      description: params[:description], book_id: params[:book_id], rating: params[:rating]
+    )
+    new_review.to_json
+  end
+
+  patch '/review/:id' do
+    update_review = Review.find(params[:id])
+    update_review.update(
+      description: params[:description],
 
 end
 

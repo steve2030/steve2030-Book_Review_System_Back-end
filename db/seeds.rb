@@ -145,8 +145,7 @@ puts "🌱 Seeding spices..."
         year:rand(1800..2022),
         isbn:rand(10000000..100000000000),
         genre:"Academic",
-        image_url:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/440px-The_Great_Gatsby_Cover_1925_Retouched.jpg',
-        pages:rand(50..1000),
+        image_url:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTfxr-RiEutSPthESbZBvpIK-Y6bEpdyRtJw&usqp=CAU',
         author_name:"F. Scott Fitzgerald",
         description:"The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted “gin was the national drink and sex the national obsession,” it is an exquisitely crafted tale of America in the 1920s."
     )
